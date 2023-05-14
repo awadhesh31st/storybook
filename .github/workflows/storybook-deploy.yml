@@ -1,4 +1,4 @@
-name: Storybook Deploy
+name: Deploy Storybook
 
 on:
   push:
@@ -6,31 +6,26 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16 # Use Node.js 16
+    - name: Setup Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
 
-      - name: Install Yarn
-        run: npm install -g yarn@latest
+    - name: Install dependencies
+      run: yarn install
 
-      - name: Install dependencies
-        run: yarn
+    - name: Build Storybook
+      run: yarn build-storybook
 
-      - name: Build Storybook
-        run: yarn build-storybook
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.STORYBOOK }}
-          publish_branch: gh-pages
-          publish_dir: storybook-static # or the directory where your Storybook build is generated
-
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.STORYBOOK }}
+        publish_dir: ./storybook-static
