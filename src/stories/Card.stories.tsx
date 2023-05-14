@@ -28,34 +28,3 @@ export const _Card: Story = {
     description,
   },
 };
-
-export const NoIcon: Story = {
-  args: {
-    className: 'bg-yellow text-coal',
-    subTitle: '01',
-    title,
-    description,
-  },
-};
-
-export const NoSubTitle: Story = {
-  args: {
-    className: 'bg-pink text-coal',
-    title,
-    description,
-  },
-};
-
-export const NoTitle: Story = {
-  args: {
-    className: 'bg-purple text-white',
-    description,
-  },
-};
-
-export const NoDescription: Story = {
-  args: {
-    className: 'bg-coal text-biege',
-    title,
-  },
-};
