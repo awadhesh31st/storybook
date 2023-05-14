@@ -4,4 +4,5 @@
 /node_modules
 /storybook-static/
 package-lock.json
+build-storybook.log
 /.env
