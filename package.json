@@ -26,7 +26,8 @@
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "chromatic": "npx chromatic --project-token=chpt_a69dd072bf66c24"
   },
   "eslintConfig": {
     "extends": [
@@ -79,5 +80,7 @@
     "storybook": "^7.0.2",
     "tailwindcss": "^3.3.1",
     "webpack": "^5.78.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "component-gem-ui@0.1.0"
 }
